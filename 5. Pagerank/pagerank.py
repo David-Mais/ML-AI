@@ -107,12 +107,12 @@ def sample_pagerank(corpus, damping_factor, n):
     current_page = random.choice(list(all_files_in_corpus))
     probability_dictionary[current_page] = 1
 
-    for _ in range(n):
-        probability_dictionary = transition_model(corpus, current_page, damping_factor)
+    for _ in range(1, n):
+        probability_dictionary_transition = transition_model(corpus, current_page, damping_factor)
 
         page_list = []
         page_weights = []
-        for page, probability in probability_dictionary.items():
+        for page, probability in probability_dictionary_transition.items():
             page_list.append(page)
             page_weights.append(probability)
 
