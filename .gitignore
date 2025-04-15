@@ -31,3 +31,5 @@ venv.bak/
 dist/
 build/
 
+# NN exercise folder
+gtsrb/
